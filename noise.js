@@ -18,5 +18,14 @@ function createTable(width, height, sellSize){
 }
 
 window.onload = function(){
-    createTable(100, 100, 2);
+    createTable(1000, 400, 5);
+
+    var sells = document.getElementsByTagName("td");
+    for (var i = 0; i < sells.length; i++){
+        if(Math.round(Math.random() * 2)){
+            sells[i].setAttribute("class", "black");
+        } else {
+            sells[i].setAttribute("class", "white");
+        }
+    }
 }

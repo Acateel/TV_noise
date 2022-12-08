@@ -1,0 +1,13 @@
+td {
+    width: 5px;
+    height: 5px;
+    /* border: 1px gray solid; */
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
