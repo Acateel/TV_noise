@@ -30,5 +30,5 @@ function drawTable(){
 
 window.onload = function(){
     createTable(1000, 400, 5);
-    drawTable();
+    setInterval(drawTable, 500);
 }
