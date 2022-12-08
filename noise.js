@@ -17,9 +17,7 @@ function createTable(width, height, sellSize){
     }
 }
 
-window.onload = function(){
-    createTable(1000, 400, 5);
-
+function drawTable(){
     var sells = document.getElementsByTagName("td");
     for (var i = 0; i < sells.length; i++){
         if(Math.round(Math.random() * 2)){
@@ -28,4 +26,9 @@ window.onload = function(){
             sells[i].setAttribute("class", "white");
         }
     }
+}
+
+window.onload = function(){
+    createTable(1000, 400, 5);
+    drawTable();
 }
