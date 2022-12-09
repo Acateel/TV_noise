@@ -28,22 +28,31 @@ function drawTable(){
     }
 }
 
+function setStopButton(func, time){
+    var id = setInterval(func, time);
+    var running = true;
+
+    document.body.addEventListener("keypress", function(event) {
+        if (event.key == "Enter"){
+            clickClack();
+        }
+    });
+
+    function clickClack(){
+        if(running){
+            clearInterval(id);
+            running = false;
+        } else {
+            id = setInterval(func, time);
+            running = true;
+        }
+    };
+}
+
 window.onload = function(){
     var width = window.outerWidth;
     var height = window.outerHeight;
 
     createTable(width, height, 3);
-    var id = setInterval(drawTable, 50);
-    var running = true;
-    document.body.addEventListener("keypress", function(event) {
-        if (event.key == "Enter"){
-            if(running){
-                clearInterval(id);
-                running = false;
-            } else {
-                id = setInterval(drawTable, 50);
-                running = true;
-            }
-        }
-    });
+    setStopButton(drawTable, 100);
 }
