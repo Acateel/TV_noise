@@ -1,3 +1,4 @@
+// create table row and sells and past its in table with id noiseTable. Witdh, height and sellSize take in pixels.
 function createTable(width, height, sellSize){
     //match count of sells in table
     var column = Math.round(width / sellSize);
@@ -60,7 +61,7 @@ window.onload = function(){
     // take size of page
     var width = window.outerWidth;
     var height = window.outerHeight;
-    
+
     createTable(width, height, 3);
     setStopButton(drawTable, 100);
 }
