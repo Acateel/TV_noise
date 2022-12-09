@@ -4,15 +4,15 @@ function createTable(width, height, sellSize){
 
     var table = document.getElementById("noiseTable");
     for(var i = 0; i < row; i++){
-        table.innerHTML = table.innerHTML + generateRow(column);
+        table.appendChild(generateRow(column));
     }
 
     function generateRow(sellCount){
-        var row = "<tr>";
+        var row = document.createElement("tr");
         for(var i = 0; i < sellCount; i++){
-            row = row + "<td></td>";
+            var sell = document.createElement("td")
+            row.appendChild(sell);
         }
-        row = row + "</tr>";
         return row;
     }
 }
