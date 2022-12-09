@@ -21,9 +21,9 @@ function drawTable(){
     var sells = document.getElementsByTagName("td");
     for (var i = 0; i < sells.length; i++){
         if(Math.round(Math.random() * 2)){
-            sells[i].setAttribute("class", "black");
-        } else {
             sells[i].setAttribute("class", "white");
+        } else {
+            sells[i].setAttribute("class", "black");
         }
     }
 }
