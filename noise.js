@@ -29,6 +29,9 @@ function drawTable(){
 }
 
 window.onload = function(){
-    createTable(1000, 400, 5);
-    setInterval(drawTable, 500);
+    var width = window.outerWidth;
+    var height = window.outerHeight;
+
+    createTable(width, height, 3);
+    var id = setInterval(drawTable, 500);
 }
