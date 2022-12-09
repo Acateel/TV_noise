@@ -33,5 +33,17 @@ window.onload = function(){
     var height = window.outerHeight;
 
     createTable(width, height, 3);
-    var id = setInterval(drawTable, 500);
+    var id = setInterval(drawTable, 50);
+    var running = true;
+    document.body.addEventListener("keypress", function(event) {
+        if (event.key == "Enter"){
+            if(running){
+                clearInterval(id);
+                running = false;
+            } else {
+                id = setInterval(drawTable, 50);
+                running = true;
+            }
+        }
+    });
 }
